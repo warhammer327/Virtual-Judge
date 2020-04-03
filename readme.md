@@ -1,13 +1,14 @@
-fproject - f stands for final
+<h1>Software Engieering Lab -2</h1>
+<p>fproject - f stands for final</p>
 
-app list :
+<p>app list :</p>
 
-1. frontpage: 
-	firstpage.html: has the login and signup option.
+<p>1. frontpage:</p> 
+	<p>firstpage.html: has the login and signup option.
 	home.html: users will get lists for past and upcoming contests.
-	about.html: yet to be filled with useful info.
+	about.html: yet to be filled with useful info.</p>
 
-2.createcontest:
-	problemlist: after entring a contest list, users will be redirected here, this page shows the problem list.
+<p>2.createcontest:</p>
+	<p>problemlist: after entring a contest list, users will be redirected here, this page shows the problem list.
 	one.html : contains all the info about the about problem 1.
-		other similar pages do the same.
+		other similar pages do the same.</p>
