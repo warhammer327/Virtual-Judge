@@ -2,5 +2,45 @@
 
 {% block mainblock %}
 
-five
+{% for i in contest %}
+<h1 style="color: black;">{{i.problem_name_5 | safe}}</h1>
+{% endfor %}
+
+{% for i in contest %}
+<p>{{i.problem_time_limit_5 | safe}}</p>
+{% endfor %}
+
+{% for i in contest %}
+<p>{{i.problem_memory_limit_5 | safe}}</p>
+{% endfor %}
+
+{% for i in contest %}
+<p style="color: black;">{{i.problem_description_5 | safe}}</p>
+{% endfor %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+		{% for i in contest %}
+  	  <p style="color: black;">{{i.problem_input_5 | safe}}</p>
+  	  {% endfor %}
+    </div>
+    <div class="col-sm">
+		{% for i in contest %}
+  	  <p style="color: black;">{{i.problem_output_5 | safe}}</p>
+  	  {% endfor %}
+  </div>
+</div>
+
+
+
+
+
+{% for i in contest %}
+<p style="color: black;">{{i.problem_note_5}}</p>
+{% endfor %}
+
+
+
+
 {% endblock %}

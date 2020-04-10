@@ -16,16 +16,24 @@ def one(request):
 
 def two(request):
 	sitename = 'Problem 2'
-	return render(request,'front/two.html',{'sitename':sitename})
+	contest = Createcontest.objects.all()
+	args = {'sitename':sitename,'contest':contest}
+	return render(request,'front/two.html',args)
 
 def three(request):
 	sitename = 'Problem 3'
-	return render(request,'front/three.html',{'sitename':sitename})
+	contest = Createcontest.objects.all()
+	args = {'sitename':sitename,'contest':contest}
+	return render(request,'front/three.html',args)
 
 def four(request):
 	sitename = 'Problem 4'
-	return render(request,'front/four.html',{'sitename':sitename})
+	contest = Createcontest.objects.all()
+	args = {'sitename':sitename,'contest':contest}
+	return render(request,'front/four.html',args)
 
 def five(request):
 	sitename = 'Problem 5'
-	return render(request,'front/five.html',{'sitename':sitename})
+	contest = Createcontest.objects.all()
+	args = {'sitename':sitename,'contest':contest}
+	return render(request,'front/five.html',args)

@@ -1,0 +1,15 @@
+'f' in the front of fpoject stands for 'final' as 'finalproject'
+
+App list - 
+
+1.frontpage:
+	firstpage.html : Contains option for signup and login. Also has "JUST" and "AOBUT" button that redirexts to respective diretories.
+	home.html : Users will be taken to this page after logging in. Has links to contests. 
+	about.html : Yet to be filled with useful information.
+	master.html : Is the master page.
+
+2.createcontest:
+	problemlist.html : Users will be redirected to this page when they click on contest links. This page show all the problems in a given contest.
+	one.html : Shows problem title, limits, description, input, output and notes for problem 1.
+	two.html : Shows problem title, limits, description, input, output and notes for problem 2.
+

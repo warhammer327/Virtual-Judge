@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 	'frontpage',
 	'createcontest',
+	'ckeditor',
 ]
 
 MIDDLEWARE = [
