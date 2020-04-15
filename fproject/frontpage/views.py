@@ -23,4 +23,8 @@ def home(request):
 
 def problemlist(request):
 	sitename = 'Problem List'
-	return render(request,'front/problemlist.html',{'sitename':sitename} )
+	return render(request,'front/problemlist.html',{'sitename':sitename})
+
+def adminpanel(request):
+	sitename ='Admin Panel'
+	return render(request,'back/adminpanel.html')

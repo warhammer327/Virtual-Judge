@@ -6,4 +6,5 @@ urlpatterns = [
 	url(r'^about/$',views.about,name='about'),
 	url(r'^master/$',views.master,name='master'),
 	url(r'^home/$',views.home,name='home'),
+	url(r'^adminpanel/$',views.adminpanel,name='adminpanel'),
 ]
