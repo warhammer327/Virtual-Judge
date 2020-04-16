@@ -19,7 +19,9 @@ def master(request):
 
 def home(request):
 	sitename = 'HOME'
-	return render(request,'front/home.html',{'sitename':sitename})
+	contest = Createcontest.objects.all()
+	args = {'sitename':sitename,'contest':contest}
+	return render(request,'front/home.html',args)
 
 def problemlist(request):
 	sitename = 'Problem List'
@@ -28,3 +30,7 @@ def problemlist(request):
 def adminpanel(request):
 	sitename ='Admin Panel'
 	return render(request,'back/adminpanel.html')
+
+def contestlist(request):
+	sitename = 'Contest list'
+	return render(request,'back/contestlist.html')

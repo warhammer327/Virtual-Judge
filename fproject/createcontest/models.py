@@ -6,6 +6,7 @@ from ckeditor.fields import RichTextField
 class Createcontest(models.Model):
 
 	contest_name = models.CharField(max_length=50,default='-')
+	contest_setter = models.CharField(max_length=50,default='-')
 
 	problem_name_1 = models.CharField(max_length=50,default='-')
 	problem_time_limit_1 = models.CharField(max_length=50,default='-')

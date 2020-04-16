@@ -7,4 +7,5 @@ urlpatterns = [
 	url(r'^master/$',views.master,name='master'),
 	url(r'^home/$',views.home,name='home'),
 	url(r'^adminpanel/$',views.adminpanel,name='adminpanel'),
+	url(r'^adminpanel/contestlist$',views.contestlist,name='contestlist'),
 ]
