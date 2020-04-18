@@ -8,4 +8,5 @@ urlpatterns = [
 	url(r'^home/$',views.home,name='home'),
 	url(r'^adminpanel/$',views.adminpanel,name='adminpanel'),
 	url(r'^adminpanel/contestlist$',views.contestlist,name='contestlist'),
+	url(r'^adminpanel/contest_add$',views.contest_add,name='contest_add'),
 ]
