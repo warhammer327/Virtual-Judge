@@ -5,13 +5,13 @@ from .models import Createcontest
 
 def problemlist(request):
 	sitename = 'Problem List'
-	contest = Createcontest.objects.all()
+	contest = Createcontest.objects.get(id=self.id)
 	args = {'sitename':sitename,'contest':contest}
 	return render(request,'front/problemlist.html',args)
 
 def one(request):
 	sitename = 'Problem 1'
-	contest = Createcontest.objects.all()
+	contest = Createcontest.objects.get(id=self.id)
 	args = {'sitename':sitename,'contest':contest}
 	return render(request,'front/one.html',args)
 
