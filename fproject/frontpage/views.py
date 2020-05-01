@@ -4,7 +4,6 @@ from createcontest.models import Createcontest
 # Create your views here.
 
 
-
 def firstpage(request):
 	sitename = 'JUST'
 	return render(request,'front/firstpage.html',{'sitename':sitename})
@@ -22,10 +21,6 @@ def home(request):
 	contest = Createcontest.objects.all()
 	args = {'sitename':sitename,'contest':contest}
 	return render(request,'front/home.html',args)
-
-def problemlist(request):
-	sitename = 'Problem List'
-	return render(request,'front/problemlist.html',{'sitename':sitename})
 
 def adminpanel(request):
 	sitename ='Admin Panel'

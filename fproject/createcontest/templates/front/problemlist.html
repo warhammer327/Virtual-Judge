@@ -3,13 +3,14 @@
 {% block mainblock %}
 
 <p></p>
-
-<div class="list-group">
-  <a href="one" class="list-group-item list-group-item-action">{{contest.problem_name_1}}</a>
-  <a href="two" class="list-group-item list-group-item-action">{{contest.problem_name_2}}</a>
-  <a href="three" class="list-group-item list-group-item-action">{{contest.problem_name_3}}</a>
-  <a href="four" class="list-group-item list-group-item-action">{{contest.problem_name_4}}</a>
-  <a href="five" class="list-group-item list-group-item-action">{{contest.problem_name_5}}</a>
+{% for i in contest %}
+<div class="container">
+  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_1}}</a>
+  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_2}}</a>
+  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_3}}</a>
+  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_4}}</a>
+  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_5}}</a>
 </div>
+{% endfor %}
 
 {% endblock %}

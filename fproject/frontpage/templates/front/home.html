@@ -3,22 +3,24 @@
 {% block mainblock %}
 
 <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Contest</th>
-      <th scope="col">Setter</th>
-      <th scope="col">Time</th>
-    </tr>
-  </thead>
-  <tbody>
-{% for i in contest reversed %}
-    <tr>
-      <td><a href="problemlist">{{i.contest_name}}</a></td>
-      <td>{{i.contest_setter}}</td>
-      <td>tobe built</td>
-    </tr>
-{% endfor %}
-  </tbody>
+	<thead>
+		<tr>
+			<th scope="col">Contest</th>
+			<th scope="col">Setter</th>
+			<th scope="col">Time</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for i in contest reversed %}
+		<tr>
+			<td>
+				<a href="{% url 'problemlist' pk=i.pk %}"> {{i.contest_name}} </a>
+			</td>
+			<td>{{i.contest_setter}}</td>
+			<td>tobe built</td>
+		</tr>
+		{% endfor %}
+	</tbody>
 </table>
 
 {% endblock %}
