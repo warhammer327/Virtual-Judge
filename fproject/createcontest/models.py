@@ -1,13 +1,13 @@
 from __future__ import unicode_literals
 from django.db import models
 from ckeditor.fields import RichTextField
-
+import datetime
 # Create your models here.
 class Createcontest(models.Model):
 
 	contest_name = models.CharField(max_length=50,null=True)
 	contest_setter = models.CharField(max_length=50,null=True)
-	contest_time = models.DateTimeField(null=True)
+	contest_time = models.DateTimeField(null=True,default=datetime.date.today)
 
 	problem_name_1 = models.CharField(max_length=50,null=True)
 	problem_time_limit_1 = models.CharField(max_length=50,null=True)
