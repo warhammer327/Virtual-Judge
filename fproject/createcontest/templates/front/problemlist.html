@@ -5,11 +5,11 @@
 <p></p>
 {% for i in contest %}
 <div class="container">
-  <a href="{% url 'problem' pk=i.pk %}" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_1}}</a>
-  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_2}}</a>
-  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_3}}</a>
-  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_4}}</a>
-  <a href="#" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_5}}</a>
+  <a href="{% url 'one' pk=i.pk %}" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_1}}</a>
+  <a href="{% url 'two' pk=i.pk %}" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_2}}</a>
+  <a href="{% url 'three' pk=i.pk %}" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_3}}</a>
+  <a href="{% url 'four' pk=i.pk %}" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_4}}</a>
+  <a href="{% url 'five' pk=i.pk %}" class="list-group-item list-group-item-action" style="text-align:center">{{i.problem_name_5}}</a>
 </div>
 {% endfor %}
 

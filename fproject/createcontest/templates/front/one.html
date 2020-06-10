@@ -1,0 +1,17 @@
+{% extends 'front/master.html' %}
+
+{% block mainblock %}
+{% for i in contest%}
+
+    <p>{{i.problem_name_1}}</p>
+    <p>{{i.problem_time_limit_1}}</p>
+    <p>{{i.problem_memory_limit_1}}</p>
+    <p>{{i.problem_description_1}}</p>
+    <p>{{i.problem_input_1}}</p>
+    <p>{{i.problem_output_1}}</p>
+    <p>{{i.problem_note_1}}</p>
+
+
+
+{% endfor %}
+{% endblock %}
