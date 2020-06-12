@@ -23,14 +23,15 @@
 				</tr>
 			</thead>
 			<tbody>
+				{% for i in contest %}
 				<tr>
-					<td class="text-center"><span class="label label-info">probable_date</td>
-					<td class="text-center"><a href="javascript:void(0)"><span class="label label-info">contest id</a></td>
-					<td class="text-center"><span class="label label-info">contest_name</td>
-					<td class="text-center"><span class="label label-info">setter_name</span></td>
+					<td class="text-center"><span class="label label-info">{{i.contest_time}}</td>
+					<td class="text-center"><a href="javascript:void(0)"><span class="label label-info">{{i.contest_name}}</a></td>
+
+					<td class="text-center"><span class="label label-info">{{i.contest_setter}}</span></td>
 
 				</tr>
-
+				{% endfor %}
 			</tbody>
 		</table>
 	</div>
