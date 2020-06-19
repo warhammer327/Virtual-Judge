@@ -33,6 +33,11 @@ def contestlist(request):
 	args = {'sitename':sitename,'contest':contest}
 	return render(request,'back/contestlist.html',args)
 
+def contest_del(request,pk):
+	b = Createcontest.objects.filter(pk=pk)
+	b.delete()
+	return render(request,'back/contestlist.html')
+
 def contest_add(request):
 	if request.method == 'POST':
 		contest_name = request.POST.get('contest_name')

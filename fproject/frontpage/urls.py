@@ -7,6 +7,7 @@ urlpatterns = [
 	url(r'^master/$',views.master,name='master'),
 	url(r'^home/$',views.home,name='home'),
 	url(r'^adminpanel/$',views.adminpanel,name='adminpanel'),
-	url(r'^adminpanel/contestlist$',views.contestlist,name='contestlist'),
-	url(r'^adminpanel/contest_add$',views.contest_add,name='contest_add'),
+	url(r'^adminpanel/contestlist/$',views.contestlist,name='contestlist'),
+	url(r'^adminpanel/contest_add/$',views.contest_add,name='contest_add'),
+	url(r'^adminpanel/contestlist/del/(?P<pk>\d+)/$',views.contest_del,name='contest_del'),
 ]
