@@ -10,4 +10,5 @@ urlpatterns = [
 	url(r'^adminpanel/contestlist/$',views.contestlist,name='contestlist'),
 	url(r'^adminpanel/contest_add/$',views.contest_add,name='contest_add'),
 	url(r'^adminpanel/contestlist/del/(?P<pk>\d+)/$',views.contest_del,name='contest_del'),
+	url(r'^adminpanel/contestlist/edit/(?P<pk>\d+)/$',views.contest_edit,name='contest_edit'),
 ]

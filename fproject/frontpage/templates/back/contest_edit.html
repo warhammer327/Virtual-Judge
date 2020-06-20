@@ -1,0 +1,367 @@
+{% extends 'back/master.html' %}
+{% load static %}
+
+
+{% block headblock %}
+<script src="{% static 'ckeditor/ckeditor.js' %}"></script>
+{% endblock %}
+
+
+{% block mainblock %}
+
+<div class="block-title">
+	<h2><strong>Edit Contest</strong></h2>
+</div>
+
+<div class="table-responsive">
+	<div id="page-content">
+		<!-- Forms General Header -->
+
+		<ul class="breadcrumb breadcrumb-top">
+			<li>Page Layout</li>
+			<li><a href="">Create Contest</a></li>
+		</ul>
+		<!-- END Forms General Header -->
+
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Basic Form Elements Block -->
+				<div class="block">
+					<!-- Basic Form Elements Title -->
+
+					<!-- END Form Elements Title -->
+
+					<!-- Basic Form Elements Content -->
+					<form action="{% url 'contest_add' %}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+						{% csrf_token %}
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Contest Name</label>
+							<div class="col-md-9">
+								<input type="text" id="contest_name" value="{{contest.contest_name}}" name="contest_name" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Contest Setter</label>
+							<div class="col-md-9">
+								<input type="text" id="contest_setter" value="{{contest.contest_setter}} name=" contest_setter" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Contest Time</label>
+							<div class="col-md-9">
+								<input type="datetime-local" id="contest_time" value="{{contest.contest_time}} name=" contest_time" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Name of Problem 1</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_name_1" value="{{contest.problem_name_1}}" name="problem_name_1" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Time Limit for Problem 1</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_time_limit_1" value="{{contest.problem_time_limit_1}}" name="problem_time_limit_1" class="form-control" placeholder="Text">
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Memory Limit for Problem 1</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_memory_limit_1" value="{{contest.problem_memory_limit_1}}" name="problem_memory_limit_1" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Description for Problem 1</label>
+							<div class="col-md-9">
+								<textarea id="problem_description_1" name="problem_description_1" rows="9" class="form-control" placeholder="Content..">{{contest.problem_description_1 | safe}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Input Sample for Problem 1</label>
+							<div class="col-md-9">
+								<textarea id="problem_input_1" name="problem_input_1" rows="9" class="form-control" placeholder="Content..">{{contest.problem_input_1}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Output Sample for Problem 1</label>
+							<div class="col-md-9">
+								<textarea id="problem_output_1" name="problem_output_1" rows="9" class="form-control" placeholder="Content..">{{contest.problem_output_1}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Note for Problem 1</label>
+							<div class="col-md-9">
+								<textarea id="problem_note_1" name="problem_note_1" rows="9" class="form-control" placeholder="Content..">{{contest.problem_note_1}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Picture for problem 1</label>
+							<div class="col-md-9">
+								<input type="file" id="problem_pic_1" value="" name="problem_pic_1" rows="9" class="form-control" placeholder="Content..">{{contest.problem_pic_1}}</input>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Name of Problem 2</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_name_2" value="{{contest.problem_name_2}}" name="problem_name_2" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Time Limit for Problem 2</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_time_limit_2" value="{{contest.problem_time_limit_2}}" name="problem_time_limit_2" class="form-control" placeholder="Text">
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Memory Limit for Problem 2</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_memory_limit_2" value="{{contest.problem_memory_limit_2}}" name="problem_memory_limit_2" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Description for Problem 2</label>
+							<div class="col-md-9">
+								<textarea id="problem_description_2" name="problem_description_2" rows="9" class="form-control" placeholder="Content..">{{contest.problem_description_2}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Input Sample for Problem 2</label>
+							<div class="col-md-9">
+								<textarea id="problem_input_2" name="problem_input_2" rows="9" class="form-control" placeholder="Content..">{{contest.problem_input_2}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Output Sample for Problem 2</label>
+							<div class="col-md-9">
+								<textarea id="problem_output_2" name="problem_output_2" rows="9" class="form-control" placeholder="Content..">{{contest.problem_output_2}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Note for Problem 2</label>
+							<div class="col-md-9">
+								<textarea id="problem_note_2" name="problem_note_2" rows="9" class="form-control" placeholder="Content..">{{contest.problem_note_2}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Picture for problem 2</label>
+							<div class="col-md-9">
+								<input type="file" id="problem_pic_2" name="problem_pic_2" rows="9" class="form-control" placeholder="Content.."></input>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Name of Problem 3</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_name_3" value="{{contest.problem_name_3}}" name="problem_name_3" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Time Limit for Problem 3</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_time_limit_3" value="{{contest.problem_time_limit_3}}" name="problem_time_limit_3" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Memory Limit for Problem 3</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_memory_limit_3" value="{{contest.problem_memory_limit_3}}" name="problem_memory_limit_3" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Description for Problem 3</label>
+							<div class="col-md-9">
+								<textarea id="problem_description_3" name="problem_description_3" rows="9" class="form-control" placeholder="Content..">{{contest.problem_description_3}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Input Sample for Problem 3</label>
+							<div class="col-md-9">
+								<textarea id="problem_input_3" name="problem_input_3" rows="9" class="form-control" placeholder="Content..">{{contest.problem_input_3}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Output Sample for Problem 3</label>
+							<div class="col-md-9">
+								<textarea id="problem_output_3" name="problem_output_3" rows="9" class="form-control" placeholder="Content..">{{contest.problem_output_3}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Note for Problem 3</label>
+							<div class="col-md-9">
+								<textarea id="problem_note_3" name="problem_note_3" rows="9" class="form-control" placeholder="Content..">{{contest.problem_note_3}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Picture for problem 3</label>
+							<div class="col-md-9">
+								<input type="file" id="problem_pic_3" name="problem_pic_3" rows="9" class="form-control" placeholder="Content.."></input>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Name of Problem 4</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_name_4" value="{{contest.problem_name_4}}" name="problem_name_4" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Time Limit for Problem 4</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_time_limit_4" value="{{contest.problem_time_limit_4}}" name="problem_time_limit_4" class="form-control" placeholder="Text">
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Memory Limit for Problem 4</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_memory_limit_4" value="{{contest.problem_memory_limit_4}}" name="problem_memory_limit_4" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Description for Problem 4</label>
+							<div class="col-md-9">
+								<textarea id="problem_description_4" name="problem_description_4" rows="9" class="form-control" placeholder="Content..">{{contest.problem_description_4}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Input Sample for Problem 4</label>
+							<div class="col-md-9">
+								<textarea id="problem_input_4" name="problem_input_4" rows="9" class="form-control" placeholder="Content..">{{contest.problem_input_4}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Output Sample for Problem 4</label>
+							<div class="col-md-9">
+								<textarea id="problem_output_4" name="problem_output_4" rows="9" class="form-control" placeholder="Content..">{{contest.problem_output_4}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Note for Problem 4</label>
+							<div class="col-md-9">
+								<textarea id="problem_note_4" name="problem_note_4" rows="9" class="form-control" placeholder="Content..">{{contest.problem_note_4}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Picture for problem 4</label>
+							<div class="col-md-9">
+								<input type="file" id="problem_pic_4" name="problem_pic_4" rows="9" class="form-control" placeholder="Content.."></input>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Name of Problem 5</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_name_5"  value="{{contest.problem_name_5}}" name="problem_name_5" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Time Limit for Problem 5</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_time_limit_5" value="{{contest.problem_time_limit_5}}" name="problem_time_limit_5" class="form-control" placeholder="Text">
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-text-input">Memory Limit for Problem 5</label>
+							<div class="col-md-9">
+								<input type="text" id="problem_memory_limit_5" value="{{contest.problem_memory_limit_5}}" name="problem_memory_limit_5" class="form-control" placeholder="Text">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Description for Problem 5</label>
+							<div class="col-md-9">
+								<textarea id="problem_description_5" name="problem_description_5" rows="9" class="form-control" placeholder="Content..">{{contest.problem_description_5}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Input Sample for Problem 5</label>
+							<div class="col-md-9">
+								<textarea id="problem_input_5" name="problem_input_5" rows="9" class="form-control" placeholder="Content..">{{contest.problem_input_5}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Output Sample for Problem 5</label>
+							<div class="col-md-9">
+								<textarea id="problem_output_5" name="problem_output_5" rows="9" class="form-control" placeholder="Content..">{{contest.problem_output_5}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Note for Problem 5</label>
+							<div class="col-md-9">
+								<textarea id="problem_note_5" name="problem_note_5" rows="9" class="form-control" placeholder="Content..">{{contest.problem_note_5}}</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="example-textarea-input">Picture for problem 5</label>
+							<div class="col-md-9">
+								<input type="file" id="problem_pic_5" name="problem_pic_5" rows="9" class="form-control" placeholder="Content.."></input>
+							</div>
+						</div>
+
+
+						<div class="form-group form-actions">
+							<div class="col-md-9 col-md-offset-3">
+								<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
+								<button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- END Example Form Block -->
+
+
+
+
+{% endblock %}

@@ -30,7 +30,7 @@
 					<td class="text-center"><a href="javascript:void(0)"><span class="label label-info">{{i.contest_name}}</a></td>
 
 					<td class="text-center"><span class="label label-info">{{i.contest_setter}}</span></td>
-					<td class="text-center"><a href="{% url 'contest_del' pk=i.pk %}"><span class="label label-info">Delete</a></td>
+					<td class="text-center"><a href="{% url 'contest_del' pk=i.pk %}"><span class="label label-info">Delete </a> <a href="{% url 'contest_edit' pk=i.pk %}"><span class="label label-info"> Edit</a></td>
 				</tr>
 				{% endfor %}
 			</tbody>
