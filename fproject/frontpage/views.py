@@ -34,13 +34,7 @@ def contestlist(request):
 	return render(request,'back/contestlist.html',args)
 
 def contest_del(request,pk):
-	b = Createcontest.objects.get(pk=pk)
-	fs = FileSystemStorage()
-	fs.delete(b.problem_pic_1)
-	fs.delete(b.problem_pic_2)
-	fs.delete(b.problem_pic_3)
-	fs.delete(b.problem_pic_4)
-	fs.delete(b.problem_pic_5)
+	b = Createcontest.objects.filter(pk=pk)
 	b.delete()
 	return render(request,'back/contestlist.html')
 
