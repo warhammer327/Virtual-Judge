@@ -2,6 +2,7 @@ from django.shortcuts import render,get_object_or_404, redirect
 from .models import Frontpage
 from createcontest.models import Createcontest
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 
 
@@ -24,16 +25,47 @@ def home(request):
 	return render(request,'front/home.html',args)
 
 def adminpanel(request):
+	#admin login check
+	if not request.user.is_authenticated:
+		return redirect('adminlogin')
+	#admin login check
 	sitename ='Admin Panel'
 	return render(request,'back/adminpanel.html')
 
+def adminlogin(request):
+	if request.method=='POST':
+		utxt=request.POST.get('username')
+		ptxt=request.POST.get('password')
+
+		if utxt!="" and ptxt!="":
+			user = authenticate(username=utxt,password=ptxt)
+
+			if user!=None:
+				login(request,user)
+				return redirect('adminpanel')
+
+	return render(request,'back/adminlogin.html')
+
+def adminlogout(request):
+	logout(request)
+	return redirect('adminlogin')
+
 def contestlist(request):
+	#admin login check
+	if not request.user.is_authenticated:
+		return redirect('adminlogin')
+	#admin login check
 	sitename = 'Contest List'
 	contest = Createcontest.objects.all()
 	args = {'sitename':sitename,'contest':contest}
 	return render(request,'back/contestlist.html',args)
 
 def contest_del(request,pk):
+	#admin login check
+	if not request.user.is_authenticated:
+		return redirect('adminlogin')
+	#admin login check
+
 	b = Createcontest.objects.get(pk=pk)
 
 	fs = FileSystemStorage()
@@ -46,6 +78,10 @@ def contest_del(request,pk):
 	return render(request,'back/contestlist.html')
 
 def contest_edit(request,pk):
+	#admin login check
+	if not request.user.is_authenticated:
+		return redirect('adminlogin')
+	#admin login check
 	sitename = 'Edit Contest'
 	contest = Createcontest.objects.get(pk=pk)
 	args = {'sitename':sitename,'contest':contest}
